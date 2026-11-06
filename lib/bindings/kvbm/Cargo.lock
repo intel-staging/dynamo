@@ -2058,8 +2058,11 @@ name = "dynamo-global-common"
 version = "1.7.0"
 dependencies = [
  "blake3",
+ "prost 0.13.5",
  "serde",
  "thiserror 2.0.18",
+ "tonic 0.13.1",
+ "tonic-build 0.13.1",
  "url",
 ]
 
@@ -2076,6 +2079,16 @@ dependencies = [
  "tokio-util",
  "tracing",
  "url",
+]
+
+[[package]]
+name = "dynamo-global-view-broadcaster"
+version = "1.7.0"
+dependencies = [
+ "parking_lot",
+ "tokio",
+ "tokio-util",
+ "tracing",
 ]
 
 [[package]]
@@ -2159,7 +2172,9 @@ dependencies = [
  "derive_builder",
  "dialoguer",
  "dynamo-decisions",
+ "dynamo-global-common",
  "dynamo-global-discovery-client",
+ "dynamo-global-view-broadcaster",
  "dynamo-kv-router",
  "dynamo-lora",
  "dynamo-memory",
@@ -7004,9 +7019,9 @@ dependencies = [
 
 [[package]]
 name = "rustls"
-version = "0.23.45"
+version = "0.23.46"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0d41d731c7d2f962d1ccc364cec258de3c0e93b38c2fb3ba97ac74513048d634"
+checksum = "48e13bd8c0e9365c43cfa5c9e8f9ad49d3c8444926c9aac819e0e4dc503c8fdf"
 dependencies = [
  "aws-lc-rs",
  "log",
